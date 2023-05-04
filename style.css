@@ -15,7 +15,8 @@
 }
 
 :root {
-  --orange: #ffba50;
+  --light-orange: #ffba50;
+  --orange: #f89b0e;
   --white: #ffffff;
   --slate: #020617;
   --dark-gray: #30302b;
@@ -23,6 +24,7 @@
   --light-gray: #d9d9d9;
   --stone: #abb7b5;
   --plchlder: #787876;
+  --road-col: #545454;
 }
 
 body {
@@ -102,7 +104,7 @@ li {
 Main Area
 ----------------------------------------------------*/
 main .wrapper {
-  background-color: var(--orange);
+  background-color: var(--light-orange);
   border-radius: 20px;
   padding-bottom: 1rem;
 }
@@ -134,7 +136,7 @@ main .bottom-content .cars span {
 }
 main .bottom-content .download a {
   display: flex;
-  background-color: var(--orange);
+  background-color: var(--light-orange);
   text-align: center;
   padding: 0.5rem 1rem;
   font-size: 1rem;
@@ -162,9 +164,67 @@ Shipment Area
 .shipment .track h2 {
   font-size: 1.8rem;
 }
+.shipment .track .top-content {
+  gap: 4rem;
+}
 .shipment .track .road {
-  height: 2rem;
+  margin-top: 1rem;
+  height: 1.8rem;
   width: 100%;
+  background-color: var(--road-col);
+  position: relative;
+  border-radius: 60px;
+}
+.shipment .track .road .dots {
+  border-top: 5px dashed var(--light-orange);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+}
+.shipment .track .road::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  bottom: 0;
+  transform: translateY(-50%);
+  right: 0;
+  height: 3rem;
+  width: 3rem;
+  background-color: var(--road-col);
+  border: 8px solid var(--light-orange);
+  border-radius: 9999999999px;
+  z-index: 2;
+}
+.shipment .track .road::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  bottom: 0;
+  transform: translateY(-50%);
+  height: 3rem;
+  width: 3rem;
+  background-color: var(--orange);
+  border: 8px solid var(--light-orange);
+  border-radius: 9999999999px;
+  z-index: 2;
+}
+.shipment .track .truck {
+  position: relative;
+}
+.shipment .track .truck img {
+  position: absolute;
+  right: 5rem;
+  margin-top: -0.6rem;
+  width: 8rem;
+  z-index: 10;
+}
+.shipment .track .map img {
+  min-width: 100%;
+  height: 35rem;
 }
 
 @media (min-width: 640px) {
