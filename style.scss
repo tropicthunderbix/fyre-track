@@ -281,7 +281,7 @@ Planning Area
     position: absolute;
     content: "";
     width: 50%;
-    height: 30%;
+    height: 35%;
     top: 20%;
     background-color: var(--box);
     z-index: -10;
@@ -290,7 +290,7 @@ Planning Area
     position: absolute;
     content: "";
     width: 40%;
-    height: 30%;
+    height: 20%;
     top: 50%;
     right: 0;
     background-color: var(--box);
@@ -305,8 +305,9 @@ Planning Area
   }
 
   h2 {
-    font-size: 2rem;
-    font-weight: 700;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--dark-gray);
 
     span {
       font-size: inherit;
@@ -375,7 +376,7 @@ Planning Area
         color: var(--road-col);
         height: 4rem;
         width: 4rem;
-        background-color: var(--orange);
+        background-color: var(--bright-orange);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -390,6 +391,84 @@ Planning Area
   }
 }
 
+/*---------------------------------------------------- 
+Photo Area
+----------------------------------------------------*/
+.photo {
+
+  .wrapper {
+    display: grid;
+    gap: 3rem;
+  }
+  .heading {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    h2 {
+      font-size: 2rem;
+      text-transform: capitalize;
+    }
+
+    a {
+      display: flex;
+      background-color: var(--bright-orange);
+      font-size: 1.5rem;
+      padding: 0.7rem 3rem;
+      border-radius: 30px;
+    }
+  }
+
+  .selects {
+    margin-top: 2rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+
+    .select {
+      height: 1rem;
+      width: 100%;
+      background-color: var(--light-orange);
+    }
+  }
+  .update {
+    margin-top: 2rem;
+    span {
+      color: var(--orange);
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+  }
+  .pictures {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 2rem;
+    img {
+      width: 100%;
+      height: 100%;
+      background-color: var(--light-orange);
+    }
+
+    .pic {
+      position: relative;
+    }
+
+    .tick {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      svg {
+        color: red;
+        width: 2rem;
+        height: 2rem;
+        color: var(--white);
+        background-color: var(--orange);
+        border-radius: var(--rounded-border);
+      }
+    }
+  }
+}
 @media (min-width: 640px) {
   main {
     h1 {
