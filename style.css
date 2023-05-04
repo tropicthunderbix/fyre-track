@@ -1,0 +1,181 @@
+@font-face {
+  font-family: "GlacialIndifference";
+  src: url("./fonts/GlacialIndifference-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "GlacialIndifference bold";
+  src: url("./fonts/GlacialIndifference-bold.otf") format("opentype");
+}
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --orange: #ffba50;
+  --white: #ffffff;
+  --slate: #020617;
+  --dark-gray: #30302b;
+  --mid-gray: #9c9c9c;
+  --light-gray: #d9d9d9;
+  --stone: #abb7b5;
+  --plchlder: #787876;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--white);
+  color: var(--slate);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 30rem;
+  width: 100%;
+}
+
+section,
+main {
+  padding: 2.5rem 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+}
+
+.container {
+  margin: auto;
+  max-width: 82rem;
+  padding: 0 1.5rem;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: var(--dark-gray);
+  word-break: break-all;
+}
+
+li {
+  list-style: none;
+}
+
+.heading span {
+  font-weight: 200;
+  font-size: 1.2rem;
+}
+.heading h2 {
+  font-weight: 600;
+  font-size: 1.7rem;
+  margin-top: 0.5rem;
+}
+
+.hidden {
+  display: none;
+}
+
+/*---------------------------------------------------- 
+Main Area
+----------------------------------------------------*/
+main .wrapper {
+  background-color: var(--orange);
+  border-radius: 20px;
+  padding-bottom: 1rem;
+}
+main h1 {
+  font-size: 1.5rem;
+}
+main .top-content {
+  gap: 2rem;
+  justify-content: space-between;
+  padding: 1rem;
+}
+main .bottom-content {
+  background-color: var(--white);
+}
+main .bottom-content .content {
+  justify-content: space-between;
+  padding: 1rem;
+  gap: 2rem;
+}
+main .bottom-content .car-names {
+  gap: 2rem;
+}
+main .bottom-content .cars {
+  gap: 0.5rem;
+}
+main .bottom-content .cars span {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+main .bottom-content .download a {
+  display: flex;
+  background-color: var(--orange);
+  text-align: center;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  border-radius: 20px;
+}
+
+/*---------------------------------------------------- 
+Shipment Area
+----------------------------------------------------*/
+.shipment .states ul {
+  border-top: 2px solid var(--mid-gray);
+  justify-content: space-between;
+}
+.shipment .states ul li {
+  padding: 0.8rem 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.shipment .track {
+  margin-top: 3rem;
+}
+.shipment .track h2 {
+  font-size: 1.8rem;
+}
+.shipment .track .road {
+  height: 2rem;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  main h1 {
+    font-size: 2rem;
+  }
+  main .bottom-content .download {
+    margin-right: 3rem;
+  }
+  main .bottom-content .download a {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+  }
+}/*# sourceMappingURL=style.css.map */
