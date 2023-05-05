@@ -162,6 +162,69 @@ main {
 }
 
 /*---------------------------------------------------- 
+History Area
+----------------------------------------------------*/
+.history {
+  .wrapper {
+    gap: 2rem;
+    justify-content: space-between;
+    letter-spacing: 3px;
+
+    .left-items,
+    .right-items {
+      display: grid;
+      gap: 5rem;
+    }
+
+    .date-time,
+    .info {
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    h3 {
+      font-weight: 600;
+      font-size: 1.4rem;
+    }
+
+    .title {
+      text-transform: uppercase;
+    }
+    .time {
+      color: var(--orange);
+    }
+  }
+
+  .road {
+    margin-top: 1rem;
+    width: 1.8rem;
+    min-height: 100%;
+    background-color: var(--road-col);
+    position: relative;
+    border-radius: 60px;
+
+    .dots {
+      border-left: 5px dashed var(--light-orange);
+      height: 100%;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .truck {
+    position: relative;
+    img {
+      position: absolute;
+      right: 5rem;
+      margin-top: -0.6rem;
+      width: 8rem;
+      z-index: 10;
+    }
+  }
+}
+
+/*---------------------------------------------------- 
 Shipment Area
 ----------------------------------------------------*/
 .shipment {
@@ -395,7 +458,6 @@ Planning Area
 Photo Area
 ----------------------------------------------------*/
 .photo {
-
   .wrapper {
     display: grid;
     gap: 3rem;
