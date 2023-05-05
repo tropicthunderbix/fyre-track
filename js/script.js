@@ -1,35 +1,38 @@
-const prev = document.querySelector(".prev");
-const next = document.querySelector(".next");
+const dropdowns = [...document.querySelectorAll(".dropdown")];
+const list = document.querySelector(".states ul");
+const states = [
+  "Estimated Transit Time",
+  "Location History",
+  "Shipment Informations",
+  "Photos",
+  "Planning",
+];
+console.log(states);
 
-prev.classList.add("disable");
+dropdowns.map((dropdown) =>
+  dropdown.addEventListener("click", () => {
+    const content = dropdown.querySelector(".content");
+    const arrow = dropdown.querySelector("svg");
+    content.classList.toggle("full-height");
+    arrow.classList.toggle("rotate");
+  })
+);
 
-const states = document.querySelectorAll(".switch-state .item");
-const imgStates = document.querySelectorAll(".switch-state .img");
-
-const swiper = new Swiper(".formslider", {
+// Shipment Carousel
+var swiper = new Swiper(".shipmentSwiper", {
   autoHeight: true,
-  allowTouchMove: false,
-  navigation: {
-    nextEl: ".next",
-    prevEl: ".prev",
+  allowTouchMove: true,
+  pagination: {
+    el: ".pagination",
+    clickable: true,
+    renderBullet: function (index, className) {
+      return (
+        '<li class="' +
+        className +
+        '"><span>' +
+        states[index] +
+        "</span></li>"
+      );
+    },
   },
-});
-
-swiper.on("slideChange", function () {
-  console.log('nice')
-  imgStates.forEach((state) => state.classList.remove("active"));
-  states.forEach((state) => state.classList.remove("active"));
-  
-  imgStates[swiper.realIndex].classList.add("active");
-  states[swiper.realIndex].classList.add("active");
-
-  next.classList.remove("disable");
-  prev.classList.remove("disable");
-
-  if (swiper.realIndex === 0) {
-    prev.classList.add("disable");
-  }
-  if (swiper.realIndex === states.length - 1) {
-    next.classList.add("disable");
-  }
 });
