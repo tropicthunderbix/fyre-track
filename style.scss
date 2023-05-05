@@ -29,6 +29,7 @@
   --plchlder: #787876;
   --road-col: #545454;
   --box: #edeae7;
+  --table-bg: #ebe6e2;
   --rounded-border: 9999999999px;
 }
 
@@ -227,7 +228,73 @@ History Area
 /*---------------------------------------------------- 
 Shipment Area
 ----------------------------------------------------*/
+
 .shipment {
+  .dropdowns {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    justify-content: space-around;
+    gap: 2rem;
+    .drop-btn {
+      display: flex;
+      background-color: var(--bright-orange);
+      padding: 0.7rem 1rem;
+      width: 100%;
+      border-radius: 10px;
+      font-size: 1rem;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
+      cursor: pointer;
+
+      h3 {
+        width: 90%;
+      }
+
+      .icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      svg {
+        width: 10%;
+        height: 1.2rem;
+        width: 1.2rem;
+        transition: 0.4s ease-in;
+      }
+
+      .rotate {
+        transform: rotate(180deg);
+      }
+    }
+
+    .content {
+      margin-top: 1rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: 0.4s ease-in;
+    }
+
+    .full-height {
+      max-height: 450px;
+    }
+    table {
+      border-collapse: collapse;
+      background-color: var(--table-bg);
+      width: 100%;
+    }
+    td {
+      border: 2px solid var(--orange);
+      padding: 0.5rem;
+      text-align: center;
+    }
+  }
+}
+
+/*---------------------------------------------------- 
+Transit Area
+----------------------------------------------------*/
+.transit {
   .states {
     ul {
       border-top: 2px solid var(--mid-gray);
@@ -547,7 +614,7 @@ Photo Area
       }
     }
   }
-  .shipment {
+  .transit {
     .states {
       ul {
         li {
