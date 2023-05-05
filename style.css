@@ -15,40 +15,38 @@
 }
 
 :root {
-  --light-orange: #ffba50;
-  --orange: #f89b0e;
-  --bright-orange: #ffaa1b;
+  --yellow: #dfb10e;
+  --light-yellow: #dfb20e75;
   --white: #ffffff;
-  --slate: #020617;
   --dark-gray: #30302b;
   --mid-gray: #9c9c9c;
   --light-gray: #d9d9d9;
   --stone: #abb7b5;
   --plchlder: #787876;
-  --road-col: #545454;
-  --box: #edeae7;
-  --table-bg: #ebe6e2;
-  --rounded-border: 9999999999px;
+  --vehicale: #454d40;
+  --dot: #e0d7d1;
+  --green-dot: #9bcb76;
+  --red-dot: #e80000;
+  --blue-dot: #29bed0;
+  --icon-bg: #f2f2f2;
+  --icon-border: #cbcbcb;
 }
 
 body {
   font-family: "Roboto", sans-serif;
   background-color: var(--white);
-  color: var(--slate);
 }
 
 a {
   text-decoration: none;
-  color: inherit;
+  color: #0d4235;
 }
 
 img {
   max-width: 30rem;
-  width: 100%;
 }
 
-section,
-main {
+section {
   padding: 2.5rem 0;
 }
 
@@ -86,10 +84,6 @@ p {
   word-break: break-all;
 }
 
-li {
-  list-style: none;
-}
-
 .heading span {
   font-weight: 200;
   font-size: 1.2rem;
@@ -107,436 +101,395 @@ li {
 /*---------------------------------------------------- 
 Main Area
 ----------------------------------------------------*/
+main {
+  background-image: url("./images/main-bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 70vh;
+  position: relative;
+}
+main::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(84, 84, 84, 0.5960784314);
+}
+main .container {
+  position: relative;
+  height: inherit;
+}
 main .wrapper {
-  background-color: var(--light-orange);
-  border-radius: 20px;
-  padding-bottom: 1rem;
+  height: inherit;
 }
-main h1 {
-  font-size: 1.5rem;
-}
-main .top-content {
-  gap: 2rem;
-  justify-content: space-between;
-  padding: 1rem;
-}
-main .bottom-content {
-  background-color: var(--white);
-}
-main .bottom-content .content {
-  justify-content: space-between;
-  padding: 1rem;
-  gap: 2rem;
-}
-main .bottom-content .car-names {
-  gap: 2rem;
-}
-main .bottom-content .cars {
-  gap: 0.5rem;
-}
-main .bottom-content .cars span {
-  font-weight: 700;
-  font-size: 1.1rem;
-}
-main .bottom-content .download a {
-  display: flex;
-  background-color: var(--light-orange);
-  text-align: center;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  font-weight: 500;
-  text-transform: capitalize;
-  border-radius: 20px;
-}
-
-/*---------------------------------------------------- 
-History Area
-----------------------------------------------------*/
-.history .wrapper {
-  gap: 2rem;
-  justify-content: space-between;
-  letter-spacing: 3px;
-}
-.history .wrapper .left-items,
-.history .wrapper .right-items {
-  display: grid;
-  gap: 5rem;
-}
-.history .wrapper .date-time,
-.history .wrapper .info {
-  display: grid;
-  gap: 0.5rem;
-}
-.history .wrapper h3 {
+main .wrapper h1,
+main .wrapper h2 {
+  font-size: 2.5rem;
   font-weight: 600;
-  font-size: 1.4rem;
-}
-.history .wrapper .title {
   text-transform: uppercase;
+  text-align: start;
 }
-.history .wrapper .time {
-  color: var(--orange);
+main .wrapper h1 {
+  color: var(--yellow);
 }
-.history .road {
-  margin-top: 1rem;
-  width: 1.8rem;
-  min-height: 100%;
-  background-color: var(--road-col);
-  position: relative;
-  border-radius: 60px;
-}
-.history .road .dots {
-  border-left: 5px dashed var(--light-orange);
-  height: 100%;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.history .truck {
-  position: relative;
-}
-.history .truck img {
-  position: absolute;
-  right: 5rem;
-  margin-top: -0.6rem;
-  width: 8rem;
-  z-index: 10;
+main .wrapper h2 {
+  color: var(--white);
 }
 
-/*---------------------------------------------------- 
-Shipment Area
-----------------------------------------------------*/
-.shipment .dropdowns {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  justify-content: space-around;
-  gap: 2rem;
+.quote {
+  color: var(--dark-gray);
 }
-.shipment .dropdowns .drop-btn {
-  display: flex;
-  background-color: var(--bright-orange);
-  padding: 0.7rem 1rem;
-  width: 100%;
-  border-radius: 10px;
-  font-size: 1rem;
-  align-items: center;
-  justify-content: center;
+.quote h3,
+.quote h2 {
+  font-weight: 600;
   text-transform: uppercase;
-  cursor: pointer;
 }
-.shipment .dropdowns .drop-btn h3 {
-  width: 90%;
+.quote h2 {
+  font-size: 2.1rem;
+  color: var(--dark-gray);
 }
-.shipment .dropdowns .drop-btn .icon {
+.quote h3 {
+  margin-top: 0.5rem;
+  color: var(--yellow);
+  font-size: 1.2rem;
+}
+.quote .switch-state {
+  margin-top: 3rem;
+  position: relative;
+}
+.quote .switch-state::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 2.5rem;
+  margin-top: 0.5rem;
+  background: rgb(84, 84, 84);
+  background: linear-gradient(90deg, rgb(84, 84, 84) 0%, rgb(223, 177, 14) 100%);
+}
+.quote .switch-state .items {
+  position: relative;
+  gap: 1rem;
+  align-items: start;
+  justify-content: center;
+}
+.quote .switch-state .items .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.5rem;
+}
+.quote .switch-state .items .item {
   display: flex;
   justify-content: center;
   align-items: center;
+  filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.2));
+  transition: 0.5s;
+  background: rgb(242, 242, 242);
+  background: linear-gradient(151deg, rgb(242, 242, 242) 0%, rgb(214, 214, 214) 100%);
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 99999999px;
 }
-.shipment .dropdowns .drop-btn svg {
-  width: 10%;
+.quote .switch-state .items .item .img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(151deg, rgb(235, 235, 235) 0%, rgb(238, 238, 238) 100%);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 99999999px;
+}
+.quote .switch-state .items .item img {
+  width: 2.5rem;
+  height: 2rem;
+}
+.quote .switch-state .items .dots {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+.quote .switch-state .items .dots .dot {
+  height: 0.6rem;
+  width: 0.6rem;
+  border-radius: 999999px;
+  background-color: var(--dot);
+}
+.quote .switch-state .items .dots .dot.active-dot {
+  background-color: var(--white);
   height: 1.2rem;
   width: 1.2rem;
-  transition: 0.4s ease-in;
 }
-.shipment .dropdowns .drop-btn .rotate {
-  transform: rotate(180deg);
+.quote .switch-state .items .dots .dot.active-dot.green {
+  border: 5px solid var(--green-dot);
 }
-.shipment .dropdowns .content {
-  margin-top: 1rem;
-  max-height: 0;
+.quote .switch-state .items .dots .dot.active-dot.red {
+  border: 5px solid var(--red-dot);
+}
+.quote .switch-state .items .dots .dot.active-dot.blue {
+  border: 5px solid var(--blue-dot);
+}
+.quote .switch-state .items .item.active {
+  background: rgb(198, 198, 198);
+  background: linear-gradient(-150deg, rgb(224, 224, 224) 0%, rgb(207, 207, 207) 100%);
+}
+.quote .switch-state .items .img.active {
+  background: rgb(198, 198, 198);
+  background: linear-gradient(150deg, rgb(204, 204, 204) 0%, rgb(185, 185, 185) 100%);
+}
+.quote .form-data {
+  margin-top: 4rem;
+  position: relative;
+}
+.quote .form-data .form-1,
+.quote .form-data .form-2,
+.quote .form-data .form-3 {
+  gap: 2rem;
   overflow: hidden;
-  transition: 0.4s ease-in;
 }
-.shipment .dropdowns .full-height {
-  max-height: 450px;
-}
-.shipment .dropdowns table {
-  border-collapse: collapse;
-  background-color: var(--table-bg);
-  width: 100%;
-}
-.shipment .dropdowns td {
-  border: 2px solid var(--orange);
-  padding: 0.5rem;
-  text-align: center;
-}
-
-/*---------------------------------------------------- 
-Transit Area
-----------------------------------------------------*/
-.transit .states ul {
-  border-top: 2px solid var(--mid-gray);
-  justify-content: space-between;
-}
-.transit .states ul li {
-  padding: 0.8rem 1rem;
-  text-align: center;
-  font-size: 1.1rem;
-  font-weight: 500;
-}
-.transit .track {
-  margin-top: 3rem;
-}
-.transit .track h2 {
-  font-size: 1.8rem;
-}
-.transit .track .top-content {
-  gap: 4rem;
-}
-.transit .track .road {
-  margin-top: 1rem;
-  height: 1.8rem;
-  width: 100%;
-  background-color: var(--road-col);
-  position: relative;
-  border-radius: 60px;
-}
-.transit .track .road .dots {
-  border-top: 5px dashed var(--light-orange);
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 0;
-  right: 0;
-}
-.transit .track .road::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  bottom: 0;
-  transform: translateY(-50%);
-  right: 0;
-  height: 3rem;
-  width: 3rem;
-  background-color: var(--road-col);
-  border: 8px solid var(--light-orange);
-  border-radius: var(--rounded-border);
-  z-index: 2;
-}
-.transit .track .road::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 50%;
-  bottom: 0;
-  transform: translateY(-50%);
-  height: 3rem;
-  width: 3rem;
-  background-color: var(--orange);
-  border: 8px solid var(--light-orange);
-  border-radius: var(--rounded-border);
-  z-index: 2;
-}
-.transit .track .truck {
-  position: relative;
-}
-.transit .track .truck img {
-  position: absolute;
-  right: 5rem;
-  margin-top: -0.6rem;
-  width: 8rem;
-  z-index: 10;
-}
-.transit .track .map img {
-  min-width: 100%;
-  height: 35rem;
-}
-.transit .track .date-time {
-  margin-top: 2rem;
-}
-.transit .track .date-time h3 {
-  font-weight: 600;
-  font-size: 1.6rem;
-}
-.transit .track .date-time .time {
-  color: var(--orange);
-}
-
-/*---------------------------------------------------- 
-Planning Area
-----------------------------------------------------*/
-.planning {
-  position: relative;
-}
-.planning::before {
-  position: absolute;
-  content: "";
-  width: 50%;
-  height: 35%;
-  top: 20%;
-  background-color: var(--box);
-  z-index: -10;
-}
-.planning::after {
-  position: absolute;
-  content: "";
-  width: 40%;
-  height: 20%;
-  top: 50%;
-  right: 0;
-  background-color: var(--box);
-  z-index: -10;
-}
-.planning .heading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 2rem;
-}
-.planning h2 {
-  font-size: 2.5rem;
-  font-weight: 800;
+.quote .form-data label {
   color: var(--dark-gray);
+  font-weight: 700;
+  font-size: 1.3rem;
+  text-align: center;
+  font-family: "GlacialIndifference bold";
 }
-.planning h2 span {
-  font-size: inherit;
-  font-weight: inherit;
-  color: var(--orange);
-}
-.planning .wrapper {
+.quote .form-data .filed {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-.planning .steps {
-  position: relative;
-  grid-column: 2/-1;
-}
-.planning .horizontal-line {
-  border-top: 2px solid var(--dark-gray);
+  gap: 0.5rem;
   width: 90%;
 }
-.planning .vertical-line {
-  position: absolute;
-  border-left: 2px solid var(--dark-gray);
-  height: 100%;
-  left: 2rem;
-  z-index: -1;
-  padding-bottom: -2.5rem;
-}
-.planning ul {
-  padding-top: 3rem;
-  color: var(--dark-gray);
+.quote .form-data .filed .grid-items {
   display: grid;
-  gap: 3rem;
+  gap: 2rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
-.planning ul li {
-  display: flex;
-  align-items: center;
-  gap: 6rem;
+.quote .form-data .filed .grid-items input {
+  margin-top: 0.6rem;
 }
-.planning ul li svg {
-  width: 2.5rem;
-  height: 2.5rem;
-  color: var(--road-col);
+.quote .form-data input,
+.quote .form-data textarea {
+  background-color: var(--stone);
+  border: 0;
+  font-size: 1rem;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  border: 3px solid transparent;
+  transition: 0.5s;
+  outline: none;
+  color: var(--dark-gray);
+  padding-left: 1rem;
+  width: 100%;
 }
-.planning ul li h2 {
-  font-weight: 500;
-  color: var(--orange);
+.quote .form-data ::-moz-placeholder {
+  color: var(--plchlder);
+  font-family: "GlacialIndifference";
 }
-.planning ul li h3 {
-  font-size: 2.5rem;
-  color: var(--road-col);
+.quote .form-data ::placeholder {
+  color: var(--plchlder);
+  font-family: "GlacialIndifference";
 }
-.planning ul li h4 {
-  font-size: 1.5rem;
-  font-weight: 400;
+.quote .form-data input[type=text]:focus {
+  border: 3px solid var(--light-yellow);
 }
-.planning ul li h3,
-.planning ul li .location {
-  color: var(--road-col);
-  height: 4rem;
-  width: 4rem;
-  background-color: var(--bright-orange);
+.quote .form-data input[type=number]::-webkit-inner-spin-button,
+.quote .form-data input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.quote .form-data .boat-btn {
+  cursor: pointer;
+  background-color: var(--yellow);
+  font-size: 1.2rem;
+  font-family: "GlacialIndifference bold";
+}
+.quote .form-data .boat-btn h4 {
+  color: var(--dark-gray);
+  padding: 0.5rem 0.7rem;
+}
+.quote .form-data .boat-btn .plus {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: var(--rounded-border);
+  padding: 0.5rem 0.7rem;
+  background-color: var(--stone);
+  font-size: 1rem;
 }
-.planning ul li .texts {
-  display: grid;
-  gap: 0.8rem;
+.quote .form-data .boat-btn .plus svg {
+  width: 1.6rem;
+  height: 1.6rem;
+  background-color: var(--yellow);
+  border-radius: 999999px;
+  color: var(--white);
 }
-
-/*---------------------------------------------------- 
-Photo Area
-----------------------------------------------------*/
-.photo .wrapper {
-  display: grid;
-  gap: 3rem;
+.quote .form-data .note label {
+  text-align: start;
 }
-.photo .heading {
-  display: flex;
+.quote .form-data .form-3 label {
+  text-align: start;
+}
+.quote .buttons {
+  margin-top: 2rem;
+  gap: 2rem;
   justify-content: space-around;
-  align-items: center;
 }
-.photo .heading h2 {
-  font-size: 2rem;
-  text-transform: capitalize;
-}
-.photo .heading a {
-  display: flex;
-  background-color: var(--bright-orange);
-  font-size: 1.5rem;
-  padding: 0.7rem 3rem;
-  border-radius: 30px;
-}
-.photo .selects {
-  margin-top: 2rem;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-}
-.photo .selects .select {
-  height: 1rem;
-  width: 100%;
-  background-color: var(--light-orange);
-}
-.photo .update {
-  margin-top: 2rem;
-}
-.photo .update span {
-  color: var(--orange);
-  font-size: 1.5rem;
+.quote .buttons button {
+  cursor: pointer;
+  background-color: var(--yellow);
+  padding: 0.5rem 1.5rem;
+  font-size: 1.25rem;
+  border: none;
+  color: var(--dark-gray);
+  border-radius: 10px;
   font-weight: 600;
 }
-.photo .pictures {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: 2rem;
-}
-.photo .pictures img {
-  width: 100%;
-  height: 100%;
-  background-color: var(--light-orange);
-}
-.photo .pictures .pic {
-  position: relative;
-}
-.photo .pictures .tick {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-}
-.photo .pictures .tick svg {
-  color: red;
-  width: 2rem;
-  height: 2rem;
-  color: var(--white);
-  background-color: var(--orange);
-  border-radius: var(--rounded-border);
+.quote p {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
 }
 
+@media (min-width: 400px) {
+  main {
+    height: 80vh;
+  }
+  main .wrapper h1,
+  main .wrapper h2 {
+    font-size: 3rem;
+  }
+  .quote h2 {
+    font-size: 2.8rem;
+  }
+  .quote h3 {
+    font-size: 1.4rem;
+  }
+  .quote .switch-state::before {
+    height: 4.2rem;
+    margin-top: 0.6rem;
+  }
+  .quote .switch-state .items .item {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+  .quote .switch-state .items .item .img {
+    width: 5rem;
+    height: 5rem;
+  }
+  .quote .switch-state .items .item img {
+    width: 2.5rem;
+    height: 2rem;
+  }
+  .quote .form-data .filed .grid-items {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .quote p {
+    font-size: 1rem;
+  }
+}
 @media (min-width: 640px) {
-  main h1 {
-    font-size: 2rem;
+  main {
+    height: 90vh;
   }
-  main .bottom-content .download {
-    margin-right: 3rem;
+  main .wrapper h1,
+  main .wrapper h2 {
+    font-size: 3.5rem;
   }
-  main .bottom-content .download a {
-    padding: 1rem 2rem;
+  .quote h2 {
+    font-size: 3.2rem;
+  }
+  .quote h3 {
+    font-size: 1.6rem;
+  }
+  .quote .form-data .filed {
+    gap: 0.5rem;
+    width: 80%;
+  }
+  .quote .form-data input,
+  .quote .form-data textarea {
+    font-size: 1.3rem;
+  }
+  .quote .form-data label {
+    font-size: 1.5rem;
+  }
+  .quote .form-data .boat-btn {
+    font-size: 1.4rem;
+  }
+  .quote .form-data .boat-btn h4 {
+    padding: 0.6rem 1rem;
+  }
+  .quote .form-data .boat-btn .plus {
+    padding: 0.6rem 1rem;
+  }
+  .quote .form-data .boat-btn .plus svg {
+    width: 2rem;
+    height: 2rem;
+  }
+  .quote .switch-state::before {
+    height: 4.2rem;
+    margin-top: 0.6rem;
+  }
+  .quote .switch-state .item {
+    width: 6.5rem;
+    height: 6.5rem;
+  }
+  .quote .switch-state .item .img {
+    width: 6rem;
+    height: 6rem;
+  }
+  .quote .switch-state .item img {
+    width: 3rem;
+    height: 3rem;
+  }
+  .quote .buttons button {
+    font-size: 1.5rem;
+  }
+  .quote p {
     font-size: 1.2rem;
   }
+}
+@media (min-width: 768px) {
+  main {
+    height: 100vh;
+  }
+  main .wrapper h1,
+  main .wrapper h2 {
+    font-size: 5rem;
+  }
+  .quote h2 {
+    font-size: 3.5rem;
+  }
+  .quote h3 {
+    font-size: 1.8rem;
+  }
+  .quote .switch-state::before {
+    height: 4.2rem;
+    margin-top: 0.7rem;
+  }
+  .quote .switch-state .items {
+    gap: 2rem;
+  }
+  .quote .switch-state .item {
+    width: 6.5rem;
+    height: 6.5rem;
+  }
+  .quote .switch-state .item .img {
+    width: 6rem;
+    height: 6rem;
+  }
+  .quote .switch-state .item img {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+}
+.disable {
+  cursor: default !important;
+  opacity: 0.6;
 }/*# sourceMappingURL=style.css.map */
