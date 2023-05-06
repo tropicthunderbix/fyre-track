@@ -23,6 +23,10 @@ var swiper = new Swiper(".shipmentSwiper", {
   autoHeight: true,
   allowTouchMove: true,
   spaceBetween: 50,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
   pagination: {
     el: ".pagination",
     clickable: true,

@@ -52,7 +52,6 @@ img {
 section,
 main {
   padding: 2.5rem 0;
-  // overflow: hidden;
 }
 
 .flex {
@@ -163,8 +162,6 @@ main {
 }
 // States
 .states {
-  .wrapper {
-  }
   ul {
     border-top: 2px solid var(--mid-gray);
     padding-top: 0.8rem;
@@ -190,6 +187,7 @@ main {
 
       border-radius: 30px;
     }
+
     .swiper-pagination-bullet {
       min-width: 170;
       padding: 5px 10px;
@@ -332,18 +330,14 @@ History Area
     background-color: var(--orange);
   }
 }
-
 /*---------------------------------------------------- 
 Shipment Area
 ----------------------------------------------------*/
 .shipment {
-  .wrapper {
-    overflow: auto;
-  }
   .dropdowns {
     display: grid;
     justify-content: space-around;
-    overflow-y: scroll;
+    overflow: scroll;
     gap: 2rem;
     .drop-btn {
       display: flex;
@@ -401,7 +395,6 @@ Shipment Area
     }
   }
 }
-
 /*---------------------------------------------------- 
 Transit Area
 ----------------------------------------------------*/
@@ -709,6 +702,20 @@ Planning Area
   }
 }
 
+.swiper-button-next,
+.swiper-button-prev {
+  display: none;
+  color: var(--orange);
+  background-color: #5454542a;
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: var(--rounded-border);
+  &::after {
+    font-weight: 700;
+    font-size: 2rem;
+  }
+}
+
 @media (min-width: 400px) {
   h1 {
     font-size: 1.5rem;
@@ -788,6 +795,12 @@ Planning Area
 }
 
 @media (min-width: 768px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .states {
     ul {
       overflow: hidden;

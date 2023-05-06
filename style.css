@@ -299,13 +299,10 @@ History Area
 /*---------------------------------------------------- 
 Shipment Area
 ----------------------------------------------------*/
-.shipment .wrapper {
-  overflow: auto;
-}
 .shipment .dropdowns {
   display: grid;
   justify-content: space-around;
-  overflow-y: scroll;
+  overflow: scroll;
   gap: 2rem;
 }
 .shipment .dropdowns .drop-btn {
@@ -626,6 +623,21 @@ Planning Area
   gap: 0.8rem;
 }
 
+.swiper-button-next,
+.swiper-button-prev {
+  display: none;
+  color: var(--orange);
+  background-color: rgba(84, 84, 84, 0.1647058824);
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: var(--rounded-border);
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
 @media (min-width: 400px) {
   h1 {
     font-size: 1.5rem;
@@ -672,6 +684,12 @@ Planning Area
   }
 }
 @media (min-width: 768px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .states ul {
     overflow: hidden;
   }
