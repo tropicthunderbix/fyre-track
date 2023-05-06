@@ -155,16 +155,24 @@ main .bottom-content .download a {
   justify-content: space-between;
   position: relative !important;
   overflow-x: scroll;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(120px, 1fr));
+  height: 100%;
 }
 .states ul li {
-  min-width: 120px;
+  z-index: 20;
+  margin: 0 !important;
+  align-self: center;
+  height: 100%;
+  padding-bottom: 1rem !important;
+  border-bottom: 4px solid var(--light-gray);
+  border-radius: 30px;
 }
 .states ul li span {
   font-size: 0.95rem;
 }
 .states ul .swiper-pagination-bullet {
   min-width: 170;
-  height: 100%;
   padding: 5px 10px;
   border-radius: 0;
   width: auto;
@@ -182,6 +190,8 @@ main .bottom-content .download a {
 }
 .states ul .swiper-pagination-bullet-active {
   color: var(--orange);
+  border-bottom: 4px solid var(--orange);
+  border-radius: 2px;
 }
 
 /*---------------------------------------------------- 
@@ -289,9 +299,13 @@ History Area
 /*---------------------------------------------------- 
 Shipment Area
 ----------------------------------------------------*/
+.shipment .wrapper {
+  overflow: auto;
+}
 .shipment .dropdowns {
   display: grid;
   justify-content: space-around;
+  overflow-y: scroll;
   gap: 2rem;
 }
 .shipment .dropdowns .drop-btn {
@@ -347,9 +361,6 @@ Shipment Area
 /*---------------------------------------------------- 
 Transit Area
 ----------------------------------------------------*/
-.transit .track {
-  margin-top: 3rem;
-}
 .transit h2 {
   font-size: 1.5rem;
 }
@@ -463,7 +474,12 @@ Photo Area
 .photo .selects .select {
   height: 0.7rem;
   width: 100%;
-  background-color: var(--light-orange);
+  background-color: rgba(248, 154, 14, 0.3764705882);
+  border-radius: 10px;
+  transition: 0.3s ease-in-out;
+}
+.photo .selects .active {
+  background-color: var(--orange);
 }
 .photo .update {
   margin-top: 1.5rem;
@@ -496,8 +512,12 @@ Photo Area
   width: 1.5rem;
   height: 1.5rem;
   color: var(--white);
-  background-color: var(--orange);
+  background-color: var(--light-gray);
   border-radius: var(--rounded-border);
+  transition: 0.3s ease-in-out;
+}
+.photo .pictures .tick .active {
+  background-color: var(--orange);
 }
 
 /*---------------------------------------------------- 
@@ -570,7 +590,7 @@ Planning Area
 .planning ul li {
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 1.5rem;
 }
 .planning ul li svg {
   width: 1.8rem;
@@ -580,10 +600,10 @@ Planning Area
 .planning ul li h2 {
   font-weight: 500;
   color: var(--orange);
-  font-size: 1.7rem;
+  font-size: 1.4rem;
 }
 .planning ul li h3 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: var(--road-col);
 }
 .planning ul li h4 {
@@ -610,23 +630,23 @@ Planning Area
   h1 {
     font-size: 1.5rem;
   }
-  .bottom-content {
+  main .bottom-content {
     background-color: var(--white);
   }
-  .bottom-content .content {
+  main .bottom-content .content {
     padding: 1rem;
     gap: 2rem;
   }
-  .bottom-content .car-names {
+  main .bottom-content .car-names {
     gap: 2rem;
   }
-  .bottom-content .cars {
+  main .bottom-content .cars {
     gap: 0.5rem;
   }
-  .bottom-content .cars span {
-    font-size: 1.1rem;
+  main .bottom-content .cars span {
+    font-size: 1.2rem;
   }
-  .bottom-content .download a {
+  main .bottom-content .download a {
     padding: 0.5rem 1rem;
     font-size: 1rem;
   }
@@ -643,8 +663,8 @@ Planning Area
   main h1 {
     font-size: 2rem;
   }
-  main .bottom-content .download {
-    margin-right: 3rem;
+  main .bottom-content {
+    padding: 0 1rem;
   }
   main .bottom-content .download a {
     padding: 1rem 2rem;
@@ -670,9 +690,6 @@ Planning Area
   }
   .shipment .dropdowns .drop-btn h3 {
     font-size: 1.1rem;
-  }
-  .transit .track {
-    margin-top: 3rem;
   }
   .transit .track h2 {
     font-size: 1.8rem;
@@ -736,7 +753,7 @@ Planning Area
     grid-template-columns: repeat(6, minmax(0, 1fr));
   }
   .photo .selects .select {
-    height: 1rem;
+    height: 0.8rem;
   }
   .photo .pictures {
     gap: 2rem;
@@ -790,11 +807,16 @@ Planning Area
     width: 2.5rem;
     height: 2.5rem;
   }
+  .planning ul li h2 {
+    font-weight: 500;
+    color: var(--orange);
+    font-size: 2rem;
+  }
   .planning ul li h3 {
     font-size: 2.5rem;
   }
   .planning ul li h4 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
   .planning ul li h3,
   .planning ul li .location {
