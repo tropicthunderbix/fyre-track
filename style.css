@@ -302,7 +302,7 @@ Shipment Area
 .shipment .dropdowns {
   display: grid;
   justify-content: space-around;
-  overflow: scroll;
+  overflow-y: scroll;
   gap: 2rem;
 }
 .shipment .dropdowns .drop-btn {
@@ -336,6 +336,7 @@ Shipment Area
   transform: rotate(180deg);
 }
 .shipment .dropdowns .content {
+  overflow-y: scroll;
   margin-top: 1rem;
   max-height: 0;
   overflow: hidden;

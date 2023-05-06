@@ -337,7 +337,7 @@ Shipment Area
   .dropdowns {
     display: grid;
     justify-content: space-around;
-    overflow: scroll;
+    overflow-y: scroll;
     gap: 2rem;
     .drop-btn {
       display: flex;
@@ -374,6 +374,7 @@ Shipment Area
     }
 
     .content {
+      overflow-y: scroll;
       margin-top: 1rem;
       max-height: 0;
       overflow: hidden;
