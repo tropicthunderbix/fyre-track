@@ -154,6 +154,13 @@ main .bottom-content .download a {
   padding-top: 0.8rem;
   justify-content: space-between;
   position: relative !important;
+  overflow-x: scroll;
+}
+.states ul li {
+  min-width: 120px;
+}
+.states ul li span {
+  font-size: 0.95rem;
 }
 .states ul .swiper-pagination-bullet {
   min-width: 170;
@@ -165,7 +172,7 @@ main .bottom-content .download a {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.8rem 1rem;
+  padding: 0.5rem 0.7rem;
   text-align: center;
   font-size: 1.1rem;
   font-weight: 500;
@@ -184,20 +191,37 @@ History Area
   gap: 2rem;
   justify-content: space-between;
   letter-spacing: 3px;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
 }
 .history .wrapper .left-items,
 .history .wrapper .right-items {
   display: grid;
   gap: 5rem;
 }
+.history .wrapper .left-items {
+  grid-column: span 2/span 2;
+}
+.history .wrapper .right-items {
+  grid-column: span 5/span 5;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.history .wrapper .infos {
+  display: grid;
+  gap: 3rem;
+}
 .history .wrapper .date-time,
 .history .wrapper .info {
   display: grid;
   gap: 0.5rem;
 }
+.history .wrapper .info {
+  position: relative;
+}
 .history .wrapper h3 {
   font-weight: 600;
-  font-size: 1.4rem;
+  font-size: 1rem;
 }
 .history .wrapper .title {
   text-transform: uppercase;
@@ -206,12 +230,13 @@ History Area
   color: var(--orange);
 }
 .history .road {
-  margin-top: 1rem;
-  width: 1.8rem;
+  width: 1.4rem;
   min-height: 100%;
   background-color: var(--road-col);
   position: relative;
   border-radius: 60px;
+  display: grid;
+  justify-content: center;
 }
 .history .road .dots {
   border-left: 5px dashed var(--light-orange);
@@ -219,16 +244,46 @@ History Area
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  height: 100%;
 }
-.history .truck {
+.history .circles {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.history .circle {
   position: relative;
-}
-.history .truck img {
-  position: absolute;
-  right: 5rem;
-  margin-top: -0.6rem;
-  width: 8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 2.2rem;
+  width: 2.2rem;
+  background-color: var(--road-col);
+  border: 6px solid var(--light-orange);
+  border-radius: var(--rounded-border);
   z-index: 10;
+}
+.history .progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--orange);
+  border-radius: 60px;
+  height: 80%;
+}
+.history .progress img {
+  position: inherit;
+  right: 5rem;
+  width: 2.7rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  bottom: 0;
+}
+.history .circle.last {
+  background-color: var(--orange);
 }
 
 /*---------------------------------------------------- 
@@ -575,6 +630,9 @@ Planning Area
     padding: 0.5rem 1rem;
     font-size: 1rem;
   }
+  .history .wrapper h3 {
+    font-size: 1.2rem;
+  }
   .photo .pictures {
     display: grid;
     gap: 1rem;
@@ -594,6 +652,18 @@ Planning Area
   }
 }
 @media (min-width: 768px) {
+  .states ul {
+    overflow: hidden;
+  }
+  .states ul li span {
+    font-size: 1.2rem;
+  }
+  .history .wrapper h3 {
+    font-size: 1.5rem;
+  }
+  .history .swiper-pagination-bullet {
+    padding: 0.8rem 1rem;
+  }
   .shipment .dropdowns {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
