@@ -113,10 +113,10 @@ main .wrapper {
   padding-bottom: 1rem;
 }
 main h1 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 main .top-content {
-  gap: 2rem;
+  gap: 1rem;
   justify-content: space-between;
   padding: 1rem;
 }
@@ -125,37 +125,34 @@ main .bottom-content {
 }
 main .bottom-content .content {
   justify-content: space-between;
-  padding: 1rem;
-  gap: 2rem;
+  padding: 1rem 0.3rem;
+  gap: 1rem;
 }
 main .bottom-content .car-names {
-  gap: 2rem;
+  gap: 1rem;
 }
 main .bottom-content .cars {
   gap: 0.5rem;
 }
 main .bottom-content .cars span {
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
 }
 main .bottom-content .download a {
   display: flex;
   background-color: var(--light-orange);
   text-align: center;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.95rem;
   font-weight: 500;
   text-transform: capitalize;
   border-radius: 20px;
 }
 
-.states .container {
-  border-top: 2px solid var(--mid-gray);
-}
 .states ul {
-  margin-top: 0.8rem;
+  border-top: 2px solid var(--mid-gray);
+  padding-top: 0.8rem;
   justify-content: space-between;
-  overflow-x: scroll;
   position: relative !important;
 }
 .states ul .swiper-pagination-bullet {
@@ -239,7 +236,6 @@ Shipment Area
 ----------------------------------------------------*/
 .shipment .dropdowns {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
   justify-content: space-around;
   gap: 2rem;
 }
@@ -256,6 +252,7 @@ Shipment Area
   cursor: pointer;
 }
 .shipment .dropdowns .drop-btn h3 {
+  font-size: 1rem;
   width: 90%;
 }
 .shipment .dropdowns .drop-btn .icon {
@@ -298,29 +295,29 @@ Transit Area
 .transit .track {
   margin-top: 3rem;
 }
-.transit .track h2 {
-  font-size: 1.8rem;
+.transit h2 {
+  font-size: 1.5rem;
 }
-.transit .track .top-content {
-  gap: 4rem;
+.transit .top-content {
+  gap: 2.5rem;
 }
-.transit .track .road {
+.transit .road {
   margin-top: 1rem;
-  height: 1.8rem;
+  height: 1.4rem;
   width: 100%;
   background-color: var(--road-col);
   position: relative;
   border-radius: 60px;
 }
-.transit .track .road .dots {
-  border-top: 5px dashed var(--light-orange);
+.transit .road .dots {
+  border-top: 4px dashed var(--light-orange);
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   left: 0;
   right: 0;
 }
-.transit .track .road::before {
+.transit .road::before {
   content: "";
   position: absolute;
   left: 0;
@@ -328,50 +325,124 @@ Transit Area
   bottom: 0;
   transform: translateY(-50%);
   right: 0;
-  height: 3rem;
-  width: 3rem;
+  height: 2.5rem;
+  width: 2.5rem;
   background-color: var(--road-col);
   border: 8px solid var(--light-orange);
   border-radius: var(--rounded-border);
   z-index: 2;
 }
-.transit .track .road::after {
+.transit .road::after {
   content: "";
   position: absolute;
   right: 0;
   top: 50%;
   bottom: 0;
   transform: translateY(-50%);
-  height: 3rem;
-  width: 3rem;
+  height: 2.5rem;
+  width: 2.5rem;
   background-color: var(--orange);
   border: 8px solid var(--light-orange);
   border-radius: var(--rounded-border);
   z-index: 2;
 }
-.transit .track .truck {
+.transit .truck {
   position: relative;
 }
-.transit .track .truck img {
+.transit .truck img {
   position: absolute;
   right: 5rem;
-  margin-top: -0.6rem;
-  width: 8rem;
+  margin-top: -0.62rem;
+  width: 7rem;
   z-index: 10;
 }
-.transit .track .map img {
+.transit .map img {
   min-width: 100%;
-  height: 35rem;
+  max-height: 35rem;
 }
-.transit .track .date-time {
-  margin-top: 2rem;
+.transit .date-time {
+  margin-top: 1.5rem;
 }
-.transit .track .date-time h3 {
+.transit .date-time h3 {
   font-weight: 600;
-  font-size: 1.6rem;
+  font-size: 1.35rem;
 }
-.transit .track .date-time .time {
+.transit .date-time .time {
   color: var(--orange);
+}
+
+/*---------------------------------------------------- 
+Photo Area
+----------------------------------------------------*/
+.photo .wrapper {
+  display: grid;
+  gap: 3rem;
+  overflow: hidden;
+}
+.photo .heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0rem;
+}
+.photo .heading h2 {
+  font-size: 1.3rem;
+  text-transform: capitalize;
+}
+.photo .heading .download a {
+  display: flex;
+  background-color: var(--light-orange);
+  text-align: center;
+  padding: 0.55rem 1.8rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  border-radius: 20px;
+}
+.photo .selects {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.photo .selects .select {
+  height: 0.7rem;
+  width: 100%;
+  background-color: var(--light-orange);
+}
+.photo .update {
+  margin-top: 1.5rem;
+}
+.photo .update span {
+  color: var(--orange);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.photo .pictures {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 1.5rem;
+}
+.photo .pictures img {
+  width: 100%;
+  height: 100%;
+  background-color: var(--light-orange);
+}
+.photo .pictures .pic {
+  position: relative;
+}
+.photo .pictures .tick {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+}
+.photo .pictures .tick svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--white);
+  background-color: var(--orange);
+  border-radius: var(--rounded-border);
 }
 
 /*---------------------------------------------------- 
@@ -403,10 +474,10 @@ Planning Area
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .planning h2 {
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   font-weight: 800;
   color: var(--dark-gray);
 }
@@ -421,7 +492,7 @@ Planning Area
 }
 .planning .steps {
   position: relative;
-  grid-column: 2/-1;
+  grid-column: 1/-1;
 }
 .planning .horizontal-line {
   border-top: 2px solid var(--dark-gray);
@@ -431,7 +502,7 @@ Planning Area
   position: absolute;
   border-left: 2px solid var(--dark-gray);
   height: 100%;
-  left: 2rem;
+  left: 1.4rem;
   z-index: -1;
   padding-bottom: -2.5rem;
 }
@@ -444,30 +515,31 @@ Planning Area
 .planning ul li {
   display: flex;
   align-items: center;
-  gap: 6rem;
+  gap: 3rem;
 }
 .planning ul li svg {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 1.8rem;
+  height: 1.8rem;
   color: var(--road-col);
 }
 .planning ul li h2 {
   font-weight: 500;
   color: var(--orange);
+  font-size: 1.7rem;
 }
 .planning ul li h3 {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   color: var(--road-col);
 }
 .planning ul li h4 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 400;
 }
 .planning ul li h3,
 .planning ul li .location {
   color: var(--road-col);
-  height: 4rem;
-  width: 4rem;
+  height: 2.8rem;
+  width: 2.8rem;
   background-color: var(--bright-orange);
   display: flex;
   justify-content: center;
@@ -479,76 +551,36 @@ Planning Area
   gap: 0.8rem;
 }
 
-/*---------------------------------------------------- 
-Photo Area
-----------------------------------------------------*/
-.photo .wrapper {
-  display: grid;
-  gap: 3rem;
+@media (min-width: 400px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  .bottom-content {
+    background-color: var(--white);
+  }
+  .bottom-content .content {
+    padding: 1rem;
+    gap: 2rem;
+  }
+  .bottom-content .car-names {
+    gap: 2rem;
+  }
+  .bottom-content .cars {
+    gap: 0.5rem;
+  }
+  .bottom-content .cars span {
+    font-size: 1.1rem;
+  }
+  .bottom-content .download a {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+  .photo .pictures {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
-.photo .heading {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-.photo .heading h2 {
-  font-size: 2rem;
-  text-transform: capitalize;
-}
-.photo .heading a {
-  display: flex;
-  background-color: var(--bright-orange);
-  font-size: 1.5rem;
-  padding: 0.7rem 3rem;
-  border-radius: 30px;
-}
-.photo .selects {
-  margin-top: 2rem;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-}
-.photo .selects .select {
-  height: 1rem;
-  width: 100%;
-  background-color: var(--light-orange);
-}
-.photo .update {
-  margin-top: 2rem;
-}
-.photo .update span {
-  color: var(--orange);
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-.photo .pictures {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: 2rem;
-}
-.photo .pictures img {
-  width: 100%;
-  height: 100%;
-  background-color: var(--light-orange);
-}
-.photo .pictures .pic {
-  position: relative;
-}
-.photo .pictures .tick {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-}
-.photo .pictures .tick svg {
-  color: red;
-  width: 2rem;
-  height: 2rem;
-  color: var(--white);
-  background-color: var(--orange);
-  border-radius: var(--rounded-border);
-}
-
 @media (min-width: 640px) {
   main h1 {
     font-size: 2rem;
@@ -559,5 +591,152 @@ Photo Area
   main .bottom-content .download a {
     padding: 1rem 2rem;
     font-size: 1.2rem;
+  }
+}
+@media (min-width: 768px) {
+  .shipment .dropdowns {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .shipment .dropdowns .drop-btn h3 {
+    font-size: 1.1rem;
+  }
+  .transit .track {
+    margin-top: 3rem;
+  }
+  .transit .track h2 {
+    font-size: 1.8rem;
+  }
+  .transit .top-content {
+    gap: 4rem;
+  }
+  .transit .road {
+    height: 1.8rem;
+  }
+  .transit .road .dots {
+    border-top: 5px dashed var(--light-orange);
+    position: absolute;
+  }
+  .transit .road::before, .transit .road::after {
+    height: 3rem;
+    width: 3rem;
+  }
+  .transit .truck img {
+    right: 5rem;
+    margin-top: -0.6rem;
+    width: 8rem;
+  }
+  .transit .date-time {
+    margin-top: 2rem;
+  }
+  .transit .date-time h3 {
+    font-size: 1.6rem;
+  }
+  .photo .wrapper {
+    gap: 3rem;
+  }
+  .photo .heading {
+    gap: 2rem;
+  }
+  .photo .heading h2 {
+    font-size: 2rem;
+  }
+  .photo .heading .download a {
+    display: flex;
+    background-color: var(--light-orange);
+    text-align: center;
+    padding: 0.8rem 2.5rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    border-radius: 20px;
+  }
+  .photo .update {
+    margin-top: 2rem;
+  }
+  .photo .update span {
+    color: var(--orange);
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  .photo .selects {
+    margin-top: 1.5rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+  .photo .selects .select {
+    height: 1rem;
+  }
+  .photo .pictures {
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  .photo .pictures .tick {
+    top: 1rem;
+    right: 1rem;
+  }
+  .photo .pictures .tick svg {
+    width: 2rem;
+    height: 2rem;
+  }
+  .planning {
+    position: relative;
+  }
+  .planning .heading {
+    margin-bottom: 2rem;
+  }
+  .planning h2 {
+    font-size: 2.5rem;
+  }
+  .planning .wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .planning .steps {
+    position: relative;
+    grid-column: 2/-1;
+  }
+  .planning .horizontal-line {
+    border-top: 2px solid var(--dark-gray);
+    width: 90%;
+  }
+  .planning .vertical-line {
+    position: absolute;
+    border-left: 2px solid var(--dark-gray);
+    left: 2rem;
+    padding-bottom: -2.5rem;
+  }
+  .planning ul {
+    padding-top: 3rem;
+    gap: 3rem;
+  }
+  .planning ul li {
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+  }
+  .planning ul li svg {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .planning ul li h3 {
+    font-size: 2.5rem;
+  }
+  .planning ul li h4 {
+    font-size: 1.5rem;
+  }
+  .planning ul li h3,
+  .planning ul li .location {
+    height: 4rem;
+    width: 4rem;
+  }
+  .planning ul li .texts {
+    gap: 0.8rem;
+  }
+}
+@media (min-width: 1024px) {
+  .shipment .dropdowns .drop-btn h3 {
+    font-size: 1.3rem;
   }
 }/*# sourceMappingURL=style.css.map */
